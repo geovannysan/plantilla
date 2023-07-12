@@ -1,0 +1,16 @@
+.dataTables_paginate .page-link {
+    border-radius: 0% !important;
+}
+.bg-secondary-sm{
+    background-color: rgba(131, 129, 129, 0.103);
+}
+.bg-secondary-md {
+    background-color: rgba(131, 129, 129, 0.432);
+}
+
+.jconfirm.jconfirm-supervan .jconfirm-box {
+    background-color: transparent !important;
+}
+.txt-capitalize {
+     text-transform: capitalize  !important;
+ }

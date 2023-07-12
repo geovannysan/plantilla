@@ -1,0 +1,70 @@
+.eventoss :hover {
+    .btn-hover svg {
+        transition: all .3s ease-in-out;
+        animation: identifier 1.3s linear infinite;
+        translate: 0 10px;
+    }
+
+    .line1 {
+
+        animation: path1 1.2s linear infinite;
+    }
+
+    .line3 {
+        animation: path2 1.2s linear infinite;
+    }
+
+    .line2 {
+
+        animation: path3 1.2s linear infinite;
+    }
+
+    @keyframes identifier {
+        0% {
+            translate: 0 0;
+        }
+
+        100% {
+            translate: 0 10px;
+        }
+    }
+
+    @keyframes path1 {
+        0% {
+            fill: #A9ABAE;
+
+        }
+
+        100% {
+            fill: #E6E7E8;
+        }
+    }
+
+    @keyframes path3 {
+        0% {
+            fill: #E6E7E8;
+        }
+
+        50% {
+            fill: #A9ABAE;
+        }
+
+        100% {
+            fill: #D2D3D5;
+        }
+    }
+
+    @keyframes path2 {
+        0% {
+            fill: #D2D3D5;
+        }
+
+        50% {
+            fill: #E6E7E8;
+        }
+
+        100% {
+            fill: #A9ABAE;
+        }
+    }
+}

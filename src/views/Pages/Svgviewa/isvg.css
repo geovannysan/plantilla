@@ -1,0 +1,637 @@
+ path.none {
+   fill: rgb(61, 64, 64);
+ }
+
+ polygon.none {
+   fill: rgb(61, 64, 64);
+
+ }
+
+ :root {
+   --swiper-navigation-color: #000000;
+ }
+
+ rect.none {
+   fill: rgb(148, 152, 152)
+ }
+
+ #grado {
+   fill: rgb(148, 152, 152);
+   cursor: pointer;
+ }
+
+ svg.opciones {
+   fill: rgb(61, 64, 64);
+ }
+
+ path.opciones {
+   fill: rgb(61, 64, 64);
+ }
+
+ path.mapas {
+   fill: rgb(61, 64, 64);
+ }
+
+ @media (min-width: 800px) {
+   .precios:hover {
+     cursor: pointer;
+     transform: scale(1.1);
+   }
+ }
+
+ .precios {
+   cursor: pointer;
+
+   transition: all .2s ease-in-out;
+
+ }
+
+ polygon.disponible:hover {
+   /* transform: scale(1.01);
+   cursor: pointer;*/
+   cursor: pointer;
+   /* transform: scale(0.2);*/
+   fill-opacity: 70%;
+   opacity: 1;
+   stroke: rgb(214, 26, 26);
+   stroke: #646464;
+   stroke-width: 1px;
+   stroke-dasharray: 2, 2;
+   cursor: pointer;
+   stroke-linejoin: round;
+ }
+
+ polygon.disponible {
+   transition: all .2s ease-in-out;
+ }
+
+ rect.disponible:hover {
+   /*transform: scale(1.01);
+   cursor: pointer;*/
+   cursor: pointer;
+   /* transform: scale(0.2);*/
+   fill-opacity: 70%;
+   opacity: 1;
+   stroke: rgb(214, 26, 26);
+   stroke: #646464;
+   stroke-width: 1px;
+   stroke-dasharray: 2, 2;
+   stroke-linejoin: round;
+ }
+
+ rect.disponible {
+   transition: all .2s ease-in-out;
+ }
+
+ path.disponible:hover {
+   /*  cursor: pointer;
+   transform: scale(1.0);*/
+   cursor: pointer;
+   /* transform: scale(0.2);*/
+
+   fill-opacity: 70%;
+   opacity: 1;
+   stroke: rgb(214, 26, 26);
+   stroke: #646464;
+   stroke-width: 1px;
+   stroke-dasharray: 2, 2;
+   stroke-linejoin: round;
+ }
+
+ ellipse.disponible {
+   transition: all .2s ease-in-out;
+ }
+
+ ellipse.disponible:hover {
+   cursor: pointer;
+   fill-opacity: 70%;
+   stroke: rgb(214, 26, 26);
+   stroke: #646464;
+   stroke-width: 1px;
+   stroke-dasharray: 2, 2;
+   stroke-linejoin: round;
+ }
+
+ path.disponible {
+   transition: all .2s ease-in-out;
+ }
+
+ .str0 {
+   stroke: #E6E7E8;
+   stroke-width: 20
+ }
+
+ .str1 {
+   stroke: #373435;
+   stroke-width: 20
+ }
+
+ .str2 {
+   stroke: #FEFEFE;
+   stroke-width: 7.62
+ }
+
+ .fil3 {
+   fill: #FEFEFE
+ }
+
+ .fil0 {
+   fill: #E6E7E8
+ }
+
+ .fil7 {
+   fill: #BDBFC1
+ }
+
+ .fil8 {
+   fill: #4B4B4D
+ }
+
+ .fil1 {
+   fill: #373435
+ }
+
+ .fil2 {
+   fill: #039AB5
+ }
+
+ .fil6 {
+   fill: #9C9C9C
+ }
+
+ .fil5 {
+   fill: #A90623
+ }
+
+ .fil4 {
+   fill: #E6BE28
+ }
+
+ .fil9 {
+   fill: #FEFEFE;
+   fill-rule: nonzero
+ }
+
+ .stra1 {
+   stroke: #FEFEFE;
+   stroke-width: 75
+ }
+
+ .stra0 {
+   stroke: #96989A;
+   stroke-width: 20
+ }
+
+ .fila2 {
+   fill: #FEFEFE
+ }
+
+ .fila10 {
+   fill: #E6E7E8
+ }
+
+ .fila0 {
+   fill: #BDBFC1
+ }
+
+ .fila9 {
+   fill: #A9ABAE
+ }
+
+ .fila1 {
+   fill: #96989A
+ }
+
+ .fila11 {
+   fill: #4B4B4D
+ }
+
+ .fila8 {
+   fill: #373435
+ }
+
+ .fila7 {
+   fill: #84716B
+ }
+
+ .fila5 {
+   fill: #9D98CA
+ }
+
+ .fila3 {
+   fill: #213858
+ }
+
+ .fila4 {
+   fill: #4494D3
+ }
+
+ .fila6 {
+   fill: #4E76B8
+ }
+
+ .fila12 {
+   fill: #FEFEFE;
+   fill-rule: nonzero
+ }
+
+ .fila13 {
+   fill: rgba(72, 136, 123, 255);
+   fill-rule: nonzero;
+ }
+
+
+ .mapanuevo {
+   shape-rendering: geometricPrecision;
+   text-rendering: geometricPrecision;
+   image-rendering: optimizeQuality;
+   fill-rule: evenodd;
+   clip-rule: evenodd;
+ }
+
+ .seudtres {
+   shape-rendering: geometricPrecision;
+   text-rendering: geometricPrecision;
+   image-rendering: optimizeQuality;
+   fill-rule: evenodd;
+   clip-rule: evenodd
+ }
+
+ .path2 {
+   fill: #363435
+ }
+
+ .path0 {
+   fill: #363435;
+   fill-rule: nonzero
+ }
+
+ .path3 {
+   fill: black;
+   fill-rule: nonzero
+ }
+
+ .path3 {
+   fill: black;
+   fill-rule: nonzero
+ }
+
+ .machr1 {
+   stroke: #E6E7E8;
+   stroke-width: 20
+ }
+
+ .machr0 {
+   stroke: #FEFEFE;
+   stroke-width: 7.62
+ }
+
+ .machfil7 {
+   fill: #E6E7E8
+ }
+
+ .machfil5 {
+   fill: #D2D3D5
+ }
+
+ .machfil3 {
+   fill: #606062
+ }
+
+ .machfil0 {
+   fill: #4B4B4D
+ }
+
+ .machfil1 {
+   fill: #201E1E
+ }
+
+ .machfil2 {
+   fill: #0092C1
+ }
+
+ .machfil4 {
+   fill: #747472
+ }
+
+ .machfil6 {
+   fill: #B9B9B9
+ }
+
+ .machfil8 {
+   fill: #CF8E00
+ }
+
+ .machfil9 {
+   fill: #FEFEFE;
+   fill-rule: nonzero
+ }
+
+ .machfil1 {
+   fill: #373435;
+   fill-rule: nonzero
+ }
+
+ .machfil10 {
+   fill: #201E1E;
+   fill-rule: nonzero
+ }
+
+
+
+ .strline0 {
+   stroke: #FEFEFE;
+   stroke-width: 20
+ }
+
+ .strline2 {
+   stroke: #FEFEFE;
+   stroke-width: 25
+ }
+
+
+ .strline1 {
+   stroke: #373435;
+   stroke-width: 20
+ }
+
+ .linefil1 {
+   fill: #FEFEFE
+ }
+
+ .linefil3 {
+   fill: #544A6B
+ }
+
+ .linefil5 {
+   fill: #727376
+ }
+
+ .linefil0 {
+   fill: #373435
+ }
+
+ .linefil2 {
+   fill: #292040
+ }
+
+ .bordesvg {
+   fill: #FEFEFE
+ }
+
+ .linefil4 {
+   fill: #402580
+ }
+
+ .linefil5 {
+   fill: #544A6B
+ }
+
+ .linefil8 {
+   fill: #671952
+ }
+
+ .linefil9 {
+   fill: #B0BED7
+ }
+
+ .linefil6 {
+   fill: #B0BED7
+ }
+
+ .linefil7 {
+   fill: #FFE7BD
+ }
+
+ .linefil11 {
+   fill: #FEFEFE;
+   fill-rule: nonzero
+ }
+
+ .linefil0 {
+   fill: #373435;
+   fill-rule: nonzero
+ }
+
+ .linefil2 {
+   fill: #373435;
+   fill-rule: nonzero
+ }
+
+
+ .cls-1 {
+   fill: #363435;
+ }
+
+ 
+ .cls-5,
+ .cls-6 {
+  /*/ fill-rule: evenodd;*/
+   cursor:not-allowed;
+ }
+
+ .cls-2 {
+   fill: #949899;
+   stroke: #363435;
+   stroke-width: 3px;
+ }
+
+ .cls-2,
+ .cls-5 {
+   stroke-linejoin: round;
+ }
+
+ .cls-3 {
+   fill: #747472;
+   filter: url(#filter);
+ }
+
+ .cls-4,
+ .cls-8 {
+   fill: #fff;
+ }
+
+ .cls-5 {
+   fill: #4b4b4d;
+   stroke: #fff;
+   stroke-width: 1px;
+ }
+
+ .cls-6 {
+   fill: #a12120;
+ }
+
+ .cls-7,
+ .cls-8 {
+   font-size: 37.5px;
+   text-anchor: middle;
+ }
+
+ .cls-8 {
+   font-family: Ebrima;
+ }
+
+
+ /**/
+ .LINR3 {
+   stroke: #201E1E;
+   stroke-width: 75
+ }
+
+ .LINR2 {
+   stroke: #E6E7E8;
+   stroke-width: 20
+ }
+
+ .LINR0 {
+   stroke: #FEFEFE;
+   stroke-width: 7.62
+ }
+
+ .LINR4 {
+   stroke: #BBBBBB;
+   stroke-width: 7.62
+ }
+
+ .LINR1 {
+   stroke: #FEFEFE;
+   stroke-width: 7.62
+ }
+
+ .lineas6 {
+   fill: #FEFEFE
+ }
+
+ .lineas1 {
+   fill: #00AFEF
+ }
+
+ .lineas0 {
+   fill: #201E1E
+ }
+
+ .lineas3 {
+   fill: #0092C1
+ }
+
+ .lineas2 {
+   fill: #201E1E
+ }
+
+ .lineas9 {
+   fill: #4B4B4D
+ }
+
+ .lineas4 {
+   fill: #606062
+ }
+
+ .lineas5 {
+   fill: #747472
+ }
+
+ .lineas7 {
+   fill: #B29307
+ }
+
+ .lineas12 {
+   fill: #BBBBBB
+ }
+
+ .lineas8 {
+   fill: #E6E7E8
+ }
+
+ .lineas11 {
+   fill: #373435;
+   fill-rule: nonzero
+ }
+
+ .lineas10 {
+   fill: #FEFEFE;
+   fill-rule: nonzero
+ }
+
+
+ /*ultimo svg*/
+ .cls-1 {
+   fill: #515151;
+ }
+
+ .cls-1,
+ .cls-10,
+ .cls-2,
+ .cls-9 {
+   stroke: #515151;
+   stroke-miterlimit: 10;
+ }
+
+ .cls-11,
+ .cls-2 {
+   fill: #fff;
+ }
+
+ .cls-3 {
+   fill: #303030;
+ }
+
+ .cls-4 {
+   fill: #bbd6f2;
+ }
+
+ .cls-5 {
+   fill: #b2b2b2;
+ }
+
+ .cls-15,
+ .cls-6 {
+   fill: #c69b30;
+ }
+
+ .cls-7 {
+   fill: #111110;
+ }
+
+ .cls-8 {
+   font-size: 22.99px;
+   fill: #fcfcfc;
+ }
+
+ .cls-11,
+ .cls-12,
+ .cls-13,
+ .cls-15,
+ .cls-8 {
+   font-family: MyriadPro-Regular,
+     Myriad Pro;
+ }
+
+ .cls-9 {
+   fill: #020202;
+ }
+
+ .cls-10 {
+   fill: none;
+ }
+
+ .cls-11 {
+   font-size: 23.06px;
+ }
+
+ .cls-12 {
+   font-size: 58.5px;
+   fill: #2e5fd8;
+ }
+
+ .cls-13,
+ .cls-15 {
+   font-size: 24.38px;
+ }
+
+ .cls-13 {
+   fill: #6d6d6d;
+ }
+
+ .cls-14 {
+   letter-spacing: -0.08em;
+ }

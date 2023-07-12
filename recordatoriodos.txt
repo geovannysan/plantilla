@@ -1,0 +1,4 @@
+//  .img-evento {
+
+}
+para cambiar el tamaño de las imagenes 

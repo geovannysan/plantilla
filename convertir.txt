@@ -1,0 +1,37 @@
+
+1311036550
+1714730510
+function creaComprobante() {
+    var opciones = {
+        orientation: 'p',
+        unit: 'mm',
+        format: [240, 300]
+    };
+
+    var doc = new jsPDF(opciones);
+
+    doc.setFontSize(10);
+    doc.text(10, 30, 'Recibo de venta de orquídeas');
+    doc.text(10, 35, 'Comprobante No.: 785654544');
+    doc.text(10, 40, 'PDV: pablito ');
+    doc.text(10, 45, 'Operador: 123654');
+    doc.text(10, 55, 'Valor: 35.00');
+    doc.text(10, 60, 'TBX: 242985290');
+    doc.text(10, 65, 'Fecha/Hora: 2022-11-11 12:28:21');
+    doc.text(10, 75, '_______________________________');
+    doc.text(10, 80, 'Recibí conforme');
+
+
+    doc.autoPrint({variant: 'non-conform'});
+
+    doc.save('comprobante.pdf');
+     doc.autoPrint();
+
+    doc.output('dataurlnewwindow', {filename: 'comprobante.pdf'});
+}
+
+
+sillas silla
+cedula:cedula
+id:de la localidad
+estado:"reservado"

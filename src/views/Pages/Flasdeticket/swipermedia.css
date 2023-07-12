@@ -1,0 +1,382 @@
+.descripciones {
+    position: absolute;
+    left: 100px;
+    bottom: 50px;
+}
+.contador{
+    position: absolute;
+    top:45%;
+    width: 100%;
+    height: 45px;
+    text-align: center;
+    color: azure ;   
+    z-index: 2;
+}
+.form{
+    position: relative;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%,-50%);
+    transition: all 1s;
+    width: 250px;
+    height: 50px;
+    background: white;
+    box-sizing: border-box;
+    border-radius: 25px;
+    border: 4px solid white;
+    padding: 5px;
+}
+.input{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 42.5px;
+    line-height: 30px;
+    outline: 0;
+    border: 1;
+    display: none;
+    font-size: 1em;
+    border-radius: 20px;
+    padding: 0 20px;
+}
+
+.fass{
+    box-sizing: border-box;
+    padding: 10px;
+    width: 42.5px;
+    height: 42.5px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+    border: 1 !important;
+    border-color: #07051a !important;
+    color: #07051a;
+    text-align: center;
+    font-size: 1.2em;
+    transition: all 1s;
+}
+
+.form{
+    width: 100%;
+    cursor: pointer;
+}
+
+
+.form input{
+    display: block;
+}
+
+.form .fa{
+    background: #07051a;
+    color: white;
+}
+/*
+.form:hover{
+    width: 300px;
+    cursor: pointer;
+}
+
+
+.form:hover input{
+    display: block;
+}
+
+.form:hover .fa{
+    background: #07051a;
+    color: white;
+}
+*/
+.contadordos{
+    position: absolute;
+    top:37%;
+    width: 100%;
+        height: 35px;
+        text-align: center;
+        color: azure;
+        
+}
+.tiempo{
+    text-transform: capitalize;
+    font-weight: bold ;
+    font-size: 60px;
+}
+span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background-color: #fff;
+    opacity: 1
+}
+.swiper-pagination-bullet {
+    background-color: rgba(175, 170, 170, 0.884);
+}
+
+.pl-n1 {
+  padding-left: 0.05rem !important;
+}
+@media (max-width: 570px) {
+    .descripciones {
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        text-align: center;
+        align-items: center;
+        bottom: 50;
+    }
+}
+
+.groud-eye {
+    cursor: pointer;
+}
+
+.icon2 {
+    fill: #FEFEFE;
+    fill-rule: nonzero
+}
+
+.icon0 {
+    fill: #FE8312;
+    fill-rule: nonzero
+}
+
+.icon1 {
+    fill: white;
+    fill-rule: nonzero
+}
+
+.nav-link:hover {
+    color: #F58634 !important;
+}
+
+.btn-outline-nuevo {
+    background-color: transparent;
+    color: #dee2e6;
+    border-color: #F58634;
+}
+
+.btn-outline-nuevo svg {
+    color: #F58634;
+}
+
+.btn-outline-nuevo:hover {
+    background-color: #F58634;
+    color: white;
+    border-color: white;
+}
+
+
+
+.iconcuenta {
+    shape-rendering: geometricPrecision;
+    text-rendering: geometricPrecision;
+    image-rendering: optimizeQuality;
+    fill-rule: evenodd;
+    clip-rule: evenodd
+}
+
+.btn-outline-nuevo :hover svg {
+    color: white;
+
+}
+
+/*.btn-hover {
+    transition: all .3s ease-in-out;
+}*/
+
+.Flecha {
+    shape-rendering: geometricPrecision;
+    text-rendering: geometricPrecision;
+    image-rendering: optimizeQuality;
+    fill-rule: evenodd;
+    clip-rule: evenodd
+}
+.hamburger {
+    font: inherit;
+    display: inline-block;
+    overflow: visible;
+    margin: 0;
+    padding: 15px;
+    cursor: pointer;
+    transition-timing-function: linear;
+    transition-duration: .15s;
+    transition-property: opacity, filter;
+    text-transform: none;
+    color: inherit;
+    border: 0;
+    background-color: transparent;
+}
+@media (min-width: 768px) {
+    .navbar-toggle-visible {
+        display: inline;
+    }
+}
+.hamburger-box {
+    position: relative;
+    display: inline-block;
+    width: 25px;
+    height: 24px;
+    color:#fff !important;
+}
+a[aria-expanded="true"] svg {
+    transform: rotate(180deg);
+    translate: 0 0;
+}
+
+@media (min-width:700px) {
+    .toast {
+        left: 50% !important;
+        color: #F58634 !important;
+    }
+}
+.toast{
+    z-index: 1000000 !important;
+}
+.nuevos .modal-dialog {
+    max-width: 90%;
+}
+
+
+.iti__selected-flag {
+    background-color: #dee2e6 !important;
+}
+
+.evento {
+    cursor: pointer;
+}
+.cursor{
+    cursor: pointer;
+}
+
+.seudtres {
+    shape-rendering: geometricPrecision;
+    text-rendering: geometricPrecision;
+    image-rendering: optimizeQuality;
+    fill-rule: evenodd;
+    clip-rule: evenodd
+}
+.btn-disable {
+     cursor: not-allowed !important;
+}
+/*
+.MuiPaper-root{
+    background-color: #442d97 !important;
+}*/
+table> tbody.region{
+ 
+            height: 100px !important;
+            overflow-y: auto !important;
+            overflow-x: hidden !important;
+        
+}
+.slick-slide {
+    margin: 0px 20px;
+}
+
+.slick-slide img {
+    width: 100%;
+}
+
+/*
+.slick-slider
+{
+position: relative;
+display: block;
+box-sizing: border-box;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+-webkit-touch-callout: none;
+-khtml-user-select: none;
+-ms-touch-action: pan-y;
+touch-action: pan-y;
+-webkit-tap-highlight-color: transparent;
+} */
+.slick-list {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.slick-list:focus {
+    outline: none;
+}
+
+.slick-list.dragging {
+    cursor: pointer;
+    cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+}
+
+.slick-track:before,
+.slick-track:after {
+    display: table;
+    content: '';
+}
+
+.slick-track:after {
+    clear: both;
+}
+
+.slick-loading .slick-track {
+    visibility: hidden;
+}
+
+.slick-slide {
+    display: none;
+    float: left;
+    height: 100%;
+    min-height: 1px;
+}
+
+[dir='rtl'] .slick-slide {
+    float: right;
+}
+
+.slick-slide img {
+    display: block;
+}
+
+.slick-slide.slick-loading img {
+    display: none;
+}
+
+.slick-slide.dragging img {
+    pointer-events: none;
+}
+
+.slick-initialized .slick-slide {
+    display: block;
+}
+
+.slick-loading .slick-slide {
+    visibility: hidden;
+}
+
+.slick-vertical .slick-slide {
+    display: block;
+    height: auto;
+    border: 1px solid transparent;
+}
+
+.slick-arrow.slick-hidden {
+    display: none;
+}

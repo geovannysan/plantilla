@@ -1,0 +1,25 @@
+a.disponible{
+    background-color: #198754;
+    cursor: pointer;
+}
+a.disponible {
+    background-color: #198754;
+    cursor: pointer;
+}
+a.ocupado{
+    background-color: #dc3545;
+}
+a.reservado{
+    background-color: #ffc107;
+}
+div.disponible{
+    background-color: #198754;
+    cursor: pointer;
+}
+div.seleccionado{
+    background-color: #6c757d;
+    cursor: pointer;
+}
+div.cargados{
+    cursor:pointer;
+}

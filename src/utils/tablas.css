@@ -1,0 +1,352 @@
+:root {
+    --main-color:#311C7C;
+    --success: #094d15e5;
+    --successtc: #19a833e1;
+    --danger:#f44336;
+    --prymary:#448DAE;
+    --prymary500:"#79C9EC";
+    --warning:#e25d0ffb;
+    --secondary:#5e5a5ada;
+    --white:#fff;
+    --white500:#d9dfe2
+}
+body::-webkit-scrollbar {
+    width: 8px;     /* Tamaño del scroll en vertical */
+    height: 8px;    /* Tamaño del scroll en horizontal */
+      /* Ocultar scroll */
+}
+body::-webkit-scrollbar-thumb {
+    background: #adabab;
+    border-radius: 4px;
+}
+
+/* Cambiamos el fondo y agregamos una sombra cuando esté en hover */
+body::-webkit-scrollbar-thumb:hover {
+    background: #928e8e;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+/* Cambiamos el fondo cuando esté en active */
+body::-webkit-scrollbar-thumb:active {
+    background-color: #999999;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    background: none !important;
+    color: var(--main-color) !important;
+    border: none !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    border: none !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:active {
+    background: none !important;
+    color: var(--main-color) !important;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: var(--main-color) !important;
+    border: 0 !important;
+    color: var(--white) !important;
+    padding: 7px 13px !important;
+}
+
+.buttons-excel {
+    display: inline-block;
+    font-weight: 400;
+    color: var(--secondary);
+    text-align: center;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .05rem;
+    color: var(--white);
+    background-color:var(--success);
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+}
+
+table.dataTable thead .sorting,
+table.dataTable thead .sorting_asc,
+table.dataTable thead .sorting_desc,
+table.dataTable thead .sorting_asc_disabled,
+table.dataTable thead .sorting_desc_disabled {
+    cursor: pointer !important;
+    position: relative !important;
+}
+
+table.dataTable .label {
+    font-weight: bold !important;
+
+    font-size: 12px !important;
+    padding: 3px 6px;
+}
+.label {
+    display: inline;
+    padding: 3px 6px 4px;
+    font-size: 75%;
+    color: var(--white);
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    -webkit-border-radius: 2px;
+    
+    border-radius: 2px;
+}
+.label.label-danger {
+    background: var(--danger) !important;
+    text-transform: uppercase;
+}
+.label.label-warning {
+    background-color: var(--warning) !important;
+    text-transform: uppercase;
+}
+.label.label-success {
+    background-color: var(--success) !important;
+    text-transform: uppercase;
+}
+.label.label-successtc {
+    background-color: var(--successtc) !important;
+    text-transform: uppercase;
+}
+.label.label-primary {
+    background-color: var(--prymary) !important;
+    text-transform: uppercase;
+}
+
+.dt-button-ligth {
+    display: inline-block;
+    font-weight: 400;
+    color: #212529;
+    text-align: center;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .05rem;
+    color: #000;
+    background-color: #f8f9fa;
+}
+
+.table>tbody>tr>td,
+.table>tbody>tr>th,
+.table>tfoot>tr>td,
+.table>tfoot>tr>th,
+.table>thead>tr>td,
+.table>thead>tr>th {
+    vertical-align: middle !important;
+}
+
+.table-bordered,
+.table-bordered td,
+.table-bordered th {
+
+
+    border: solid 0.5px rgba(0, 0, 0, 0.123) !important;
+
+}
+
+.table thead tr th {
+    font-weight: 500 !important;
+    border-bottom: 1px solid #adadad !important; 
+}
+
+table.dataTable.nowrap th,
+table.dataTable.nowrap td {
+    white-space: nowrap !important;
+}
+
+table.dataTable thead>tr>th.sorting_asc,
+table.dataTable thead>tr>th.sorting_desc,
+table.dataTable thead>tr>th.sorting,
+table.dataTable thead>tr>td.sorting_asc,
+table.dataTable thead>tr>td.sorting_desc,
+table.dataTable thead>tr>td.sorting {
+    padding-right: 15px !important;
+    text-transform: uppercase !important;
+    font-size: 11px !important;
+}
+
+table.table-bordered.dataTable th,
+table.table-bordered.dataTable td {
+    border-left-width: 0 !important;
+}
+
+/*
+.dataTables_wrapper.dt-bootstrap .dataTables_filter label .form-control,
+.dataTables_wrapper.dt-bootstrap4 .dataTables_filter label .form-control {
+    display: block;
+    margin-left: 8px;
+    width: 260px;
+    height: 34px;
+}*/
+.dataTables_wrapper.dt-bootstrap .dataTables_info,
+.dataTables_wrapper.dt-bootstrap4 .dataTables_info {
+    font-weight: 500 !important;
+    color: #6e6e6e !important;
+}
+
+div.dataTables_wrapper div.dataTables_info {
+    padding-top: 0.85em !important;
+    white-space: nowrap !important;
+}
+
+.dt-button-ligth:hover {
+    background-color: #dfdfdf;
+}
+
+.buttons-excel:hover {
+    background-color: #1e9960;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+
+
+}
+.select2-body--open{
+   
+    z-index: 10000 !important;
+}
+
+.dataTables_wrapper td {
+    border: 0.5px solid rgba(0, 0, 0, 0.068);
+}
+
+.btn.btn-default {
+    color: var(--secondary);
+    background: var(--white);
+    border-color: var(--white500);
+    
+    margin: 0 !important;
+   
+}
+.goog-menu-button-inner-box{
+    color: var(--secondary);
+        background: var(--white);
+        border-color: var(--white500);
+        border: none;
+        margin: 0 !important;
+}
+.btn.btn-default-su {
+    color: var(--success) ;
+    background: var(--white);
+    border-color: var(--white500);
+    margin: 0 !important;
+
+}
+
+/*
+table.collapsed td.dtr-control {
+    background: url('mas.svg') no-repeat center;
+    cursor: pointer !important;
+}
+
+tr.dt-hasChild.parent td.dtr-control {
+    background: url('minus.svg') no-repeat center;
+}*/
+
+.dataTables_filter label{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 5px;
+}
+.dataTables_filter input {
+    width: 300px !important;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-content: center;
+}
+
+
+table.table {
+    font-size: 13px;
+}
+
+
+.dataTables_filter input {
+    margin-top: 2px !important;
+}
+@media (max-width: 767px) {
+    div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+        -ms-flex-pack: center !important;
+        justify-content: center !important;
+        margin-top: 1rem !important;
+    }
+}
+div.dataTables_wrapper tr.child {    
+    width: 100% !important;
+    padding: 2px !important;   
+    text-align: center !important;
+}
+div.dataTables_wrapper tr.child td.child>ul.dtr-details>li {
+    justify-content: center !important;
+    list-style-type: none !important;
+    border: none !important;
+    padding: 2px !important;
+}
+
+/*a.paginate_button.current {
+    background-color: rgb(0, 47, 255) !important;
+}*/
+li.paginate_button :hover {
+    background: "red" !important;
+    background-color: var(--main-color);
+}
+
+li.paginate_button {
+    padding: 1px !important;
+}
+
+.btn-default,
+.btn-default:hover {
+    color: var(--secondary) !important;
+    background-color: var(--white)  !important;
+    border-color: rgb(175, 175, 175) !important;
+}
+
+.btn-default {
+    -webkit-box-shadow: 0 !important;
+    box-shadow: 0 !important;
+}
+
+body table.dataTable {
+    border-collapse: collapse !important;
+}
+table {
+    font-size: 13px !important;
+}
+thead {
+    display: table-header-group !important;
+    vertical-align: middle !important;
+    border-color: inherit !important;
+}
+
+.btn-group-sm>.btn,
+.btn-sm {
+    padding: 0.3125rem 0.625rem  !important;
+    font-size: .75rem !important;
+    line-height: 1.4 !important;
+    border-radius: 2px !important;
+}
+
+.paging_full_numbers span.paginate_button {
+    background: repeat-x scroll 50% 50% #311C7C !important;
+    border: 1px solid #174353 !important;
+    color: var(--white) !important;
+    font-weight: normal !important;
+}
+
+.paging_full_numbers span.paginate_button:hover {
+    background: repeat-x scroll 50% 50% var(--prymary500) !important;
+    border: 1px solid var(--prymary) !important;
+    color: var(--white) !important;
+    font-weight: normal !important;
+}
+
+.paging_full_numbers span.paginate_active {
+    background: repeat-x scroll 50% 50% #6EAC2C !important;
+    border: 1px solid #ACDD4A !important;
+    color: var(--white) !important;
+    font-weight: normal !important;
+}
