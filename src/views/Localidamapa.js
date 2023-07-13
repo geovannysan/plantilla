@@ -33,6 +33,11 @@ export default function LocalidadMApView() {
     var mapath = useSelector((state) => state.mapaLocalSlice)
     const usedispatch = useDispatch()
     let [datos, setDatos] = useState("")
+    let [colro, colroDatos] = useState({
+        color:"",
+        id:""
+    })
+    const viewref = useRef()
     const sillasetado = (d) => {
         return d.estado.toLowerCase()
     }
@@ -60,73 +65,53 @@ export default function LocalidadMApView() {
                 console.log(nuevoObjeto)
             } else if (ouput.data.find(e => e.typo == "mesa")) {
                 cargarMapa().then(o => {
-                    setDatos(o.data.filter(e =>
-                        e.nombre_espacio == nombre
+                    setDatos(o.data.filter(e => e.nombre_espacio == nombre)[0].nombre_mapa)
+                    //svginit()
 
-                    )[0].nombre_mapa)
-                    console.log(o.data.filter(e =>
-                        e.nombre_espacio == nombre
-
-                    ))
-                    console.log(o.data.filter(e => e.nombre_espacio == nombre)[0])
-                    setTimeout(function () {
-                        JSON.parse(o.data.filter(e =>
-                            e.nombre_espacio == nombre
-
-                        )[0].pathmap).filter(e => e.id == parms).map((e, i) => {
-                            console.log(e)
-                            $("#mapas" + e.path).attr("fill", e.fill)
-                            $("#mapas" + e.path).removeAttr("class")
-                            // console.log(e.path)
-                            $("#mapas" + e.path).attr("fill", e.fill)
-                            $("#mapas" + e.path).removeAttr("class")
-
+                    usedispatch(settypo({ nombre: "", typo: "mesa" }))
+                    let nuevoObjeto = []
+                    ouput.data.forEach(x => {
+                        if (!nuevoObjeto.some(e => e.fila == x.fila)) {
+                            nuevoObjeto.push({ fila: x.fila, Mesas: [] })
+                        }
+                    })
+                    nuevoObjeto.length > 0 ? ouput.data.forEach(x => {
+                        let index = nuevoObjeto.findIndex(z => z.fila == x.fila)
+                        if (nuevoObjeto[index].Mesas.findIndex(z => z.mesa == x.mesa) == -1) {
+                            nuevoObjeto[index].Mesas.push({ mesa: x.mesa, asientos: [] })
+                        }
+                    }) : ''
+                    nuevoObjeto.length > 0 ? ouput.data.forEach(x => {
+                        let index = nuevoObjeto.findIndex(z => z.fila == x.fila)
+                        let sillas = nuevoObjeto[index].Mesas.findIndex(y => y.mesa == x.mesa)
+                        nuevoObjeto[index].Mesas[sillas].asientos.push({
+                            silla: x.silla, estado: x.estado, idsilla: x.id, cedula: x.cedula
                         })
-                    }, 300)
+                    })
+                        : ''
+
+                    usedispatch(filtrarlocali(nuevoObjeto))
+                    console.log(JSON.parse(o.data.filter(e => e.nombre_espacio == nombre)[0].pathmap).filter(e => e.id == parms)[0].fill)
+                    colroDatos({ "id": JSON.parse(o.data.filter(e => e.nombre_espacio == nombre)[0].pathmap).filter(e => e.id == parms)[0].path, color: "" + JSON.parse(o.data.filter(e => e.nombre_espacio == nombre)[0].pathmap).filter(e => e.id == parms)[0].fill +"" })
+                   /* setTimeout(function () {
+                        renderizarsvg(o, o)
+                    }, 5)*/
+
+                    //viewref.current. 
+
+                    //}, 100)
 
 
                 }).catch(er => {
                     console.log(er)
                 })
-                usedispatch(settypo({ nombre: "", typo: "mesa" }))
-                let nuevoObjeto = []
-                ouput.data.forEach(x => {
-                    if (!nuevoObjeto.some(e => e.fila == x.fila)) {
-                        nuevoObjeto.push({ fila: x.fila, Mesas: [] })
-                    }
-                })
-                nuevoObjeto.length > 0 ? ouput.data.forEach(x => {
-                    let index = nuevoObjeto.findIndex(z => z.fila == x.fila)
-                    if (nuevoObjeto[index].Mesas.findIndex(z => z.mesa == x.mesa) == -1) {
-                        nuevoObjeto[index].Mesas.push({ mesa: x.mesa, asientos: [] })
-                    }
-                }) : ''
-                nuevoObjeto.length > 0 ? ouput.data.forEach(x => {
-                    let index = nuevoObjeto.findIndex(z => z.fila == x.fila)
-                    let sillas = nuevoObjeto[index].Mesas.findIndex(y => y.mesa == x.mesa)
-                    nuevoObjeto[index].Mesas[sillas].asientos.push({
-                        silla: x.silla, estado: x.estado, idsilla: x.id, cedula: x.cedula
-                    })
-                })
-                    : ''
-                //  console.log("aqui")
-                usedispatch(filtrarlocali(nuevoObjeto))
-                //console.log(nuevoObjeto)
+
+
             }
             else if (ouput.data.some(e => e.typo == "correlativo")) {
                 usedispatch(settypo({ nombre: "", typo: "correlativo" }))
                 usedispatch(filtrarlocali(ouput.data.filter(e => e.estado == "disponible")))
-                //    console.log(ouput.data.filter(e => e.estado == "disponible").length)
-                let dispo = ouput.data.filter(e => e.estado == "disponible").length
-                // console.log(ouput.data.filter(e=>e.cedula!=""))
-                // console.log(ouput.data.filter(e=>e.cedula!=null).length)
-                //console.log(ouput.data)
 
-                /* console.log({
-                     disponibles: ouput.data.filter(e => e.cedula != " " && e.cedula != null).length,
-                     proceso: ouput.data.filter(e => e.estado == "reservado" && e.cedula == user.cedula).length,
-                     pagados: sleccionlocalidad.pagados,  inpagos: sleccionlocalidad.inpagos
-                 })*/
             }
         }).catch(err => {
             console.log(err)
@@ -135,12 +120,28 @@ export default function LocalidadMApView() {
     useEffect(() => {
         Cargarlisat()
     }, [])
+
+    function renderizarsvg(o, nombre) {
+        //const va = document.getElementById("#mapas" + JSON.parse(o.data.filter(e => e.nombre_espacio == nombre)[0].pathmap).filter(e => e.id == parms)[0].path)
+        //let svg = va.getElementsByTagName('svg')[0];       
+      //  console.log(va)
+       // va.svg.style.fill = JSON.parse(o.data.filter(e => e.nombre_espacio == nombre)[0].pathmap).filter(e => e.id == parms)[0].fill;
+         datos == "" ? "" : $("#mapas" + JSON.parse(o.data.filter(e => e.nombre_espacio == nombre)[0].pathmap).filter(e => e.id == parms)[0].path).attr("fill", JSON.parse(o.data.filter(e => e.nombre_espacio == nombre)[0].pathmap).filter(e => e.id == parms)[0].fill)
+        datos == "" ? "" : $("#mapas" + JSON.parse(o.data.filter(e => e.nombre_espacio == nombre)[0].pathmap).filter(e => e.id == parms)[0].path).removeAttr("class")
+        //console.log(e.path)
+         datos == "" ? "" : $("#mapas" + JSON.parse(o.data.filter(e => e.nombre_espacio == nombre)[0].pathmap).filter(e => e.id == parms)[0].path).attr("fill", JSON.parse(o.data.filter(e => e.nombre_espacio == nombre)[0].pathmap).filter(e => e.id == parms)[0].fill)
+         datos == "" ? "" : $("#mapas" + JSON.parse(o.data.filter(e => e.nombre_espacio == nombre)[0].pathmap).filter(e => e.id == parms)[0].path).removeAttr("class")
+
+    }
+    function svginit() {
+        return <SVGView text={datos} fu={colro.id} color={colro.color}  />
+    }
     return (
         <div style={{
             height: "100%"
         }}>
             <div className="d-flex flex-column justify-content-center align-items-center ">
-                {datos == "" ? "" : <div className="h-25"> <SVGView text={datos} /></div>}
+                {datos == "" ? "" : <div className="h-25"> <SVGView text={datos} fu={colro.id} colo={colro.color} /></div>}
 
                 {mapath.typo == "fila" ?
                     <div className="section m-auto" >

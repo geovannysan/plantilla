@@ -1,4 +1,18 @@
-const SVGView = ({ text }) => {
+import { useEffect } from "react";
+
+const SVGView = ({ text , fu, colo }) => {
+    useEffect(() => {
+        console.log({ text, fu, colo })
+       
+            $("#mapas" + fu).attr("fill", colo)
+            $("#mapas" + fu).removeAttr("class")
+            //console.log(e.path)
+            $("#mapas" + fu).attr("fill", colo)
+            $("#mapas" + fu).removeAttr("class")
+       
+
+
+    }, [])
     const plantilla = {
         "estandar": <svg version="1.0" className="opciones" xmlns="http://www.w3.org/2000/svg"
             width="90%" height="90%" viewBox="0 0 1024.000000 768.000000"
