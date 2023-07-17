@@ -141,7 +141,7 @@ export default function LocalidadMApView() {
             height: "100%"
         }}>
             <div className="d-flex flex-column justify-content-center align-items-center ">
-                {datos == "" ? "" : <div className="h-25"> <SVGView text={datos} fu={colro.id} colo={colro.color} /></div>}
+                {datos == "" ? "" : <div className="h-25 d-none"> <SVGView text={datos} fu={colro.id} colo={colro.color} /></div>}
 
                 {mapath.typo == "fila" ?
                     <div className="section m-auto" >
@@ -196,11 +196,7 @@ export default function LocalidadMApView() {
                                 mapath.localidadespecica.map((e, index) => {
                                     return (
                                         <div className='d-flex  PX-1 align-items-center' key={index}>
-                                            <div className='d-flex pb-2'>
-                                                <MesaiView
-                                                    text={e.fila}
-                                                />
-                                            </div>
+                                            
                                             <div className='d-flex  pb-2' >
                                                 {e.Mesas.length > 0 ?
                                                     e.Mesas.map((e, i) => {
