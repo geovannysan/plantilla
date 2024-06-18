@@ -2,7 +2,6 @@ import { useParams, Route, Switch, Redirect } from "react-router-dom";
 import React, { useState, useEffect, useRef } from "react"
 import MesaiView from "views/Pages/Mesas/Plantillas/indice"
 import MesasView from "views/Pages/Mesas"
-import SVGView from "views/Pages/Svgviewa/svgoptio.js";
 import { TiendaIten, getVerTienda, EliminarByStora, EliminarsilladeMesa } from "utils/CarritoLocalStorang";
 import { Modal } from "react-bootstrap"
 import { useDispatch, useSelector } from "react-redux"
@@ -10,7 +9,7 @@ import { filtrarlocali, settypo } from "StoreRedux/Slice/mapaLocalSlice";
 import { addSillas, deleteSillas, clearSillas, deleteMesa } from "StoreRedux/Slice/sillasSlice"
 import { EliminarSillas, AgregarAsiento, VerSillaslist, TotalSelecion } from "utils/CarritoLocalStorang"
 import SweetAlert from "react-bootstrap-sweetalert";
-import "./localidas.css"
+//import "./localidas.css"
 import { getDatosUsuariosLocalStorag } from "utils/DatosUsuarioLocalStorag";
 import { seleccionmapa } from "utils/constantes";
 import { enviasilla } from "utils/Querypanelsigui";
@@ -28,14 +27,15 @@ import { Triangle } from "react-loader-spinner";
 let { atencion } = bancos
 import { setSpinersli } from "StoreRedux/Slice/SuscritorSlice";
 import { cargarMapa } from "utils/MapaQuery";
+import SVGView from "./Pages/Svgviewa/svgoptio";
 export default function LocalidadMApView() {
     let { id, parms } = useParams()
     var mapath = useSelector((state) => state.mapaLocalSlice)
     const usedispatch = useDispatch()
     let [datos, setDatos] = useState("")
     let [colro, colroDatos] = useState({
-        color:"",
-        id:""
+        color: "",
+        id: ""
     })
     const viewref = useRef()
     const sillasetado = (d) => {
@@ -66,6 +66,7 @@ export default function LocalidadMApView() {
             } else if (ouput.data.find(e => e.typo == "mesa")) {
                 cargarMapa().then(o => {
                     setDatos(o.data.filter(e => e.nombre_espacio == nombre)[0].nombre_mapa)
+                    console.log(o.data.filter(e => e.nombre_espacio == nombre)[0].nombre_mapa)
                     //svginit()
 
                     usedispatch(settypo({ nombre: "", typo: "mesa" }))
@@ -92,10 +93,10 @@ export default function LocalidadMApView() {
 
                     usedispatch(filtrarlocali(nuevoObjeto))
                     console.log(JSON.parse(o.data.filter(e => e.nombre_espacio == nombre)[0].pathmap).filter(e => e.id == parms)[0].fill)
-                    colroDatos({ "id": JSON.parse(o.data.filter(e => e.nombre_espacio == nombre)[0].pathmap).filter(e => e.id == parms)[0].path, color: "" + JSON.parse(o.data.filter(e => e.nombre_espacio == nombre)[0].pathmap).filter(e => e.id == parms)[0].fill +"" })
-                   /* setTimeout(function () {
-                        renderizarsvg(o, o)
-                    }, 5)*/
+                    colroDatos({ "id": JSON.parse(o.data.filter(e => e.nombre_espacio == nombre)[0].pathmap).filter(e => e.id == parms)[0].path, color: "" + JSON.parse(o.data.filter(e => e.nombre_espacio == nombre)[0].pathmap).filter(e => e.id == parms)[0].fill + "" })
+                    /* setTimeout(function () {
+                         renderizarsvg(o, o)
+                     }, 5)*/
 
                     //viewref.current. 
 
@@ -124,24 +125,31 @@ export default function LocalidadMApView() {
     function renderizarsvg(o, nombre) {
         //const va = document.getElementById("#mapas" + JSON.parse(o.data.filter(e => e.nombre_espacio == nombre)[0].pathmap).filter(e => e.id == parms)[0].path)
         //let svg = va.getElementsByTagName('svg')[0];       
-      //  console.log(va)
-       // va.svg.style.fill = JSON.parse(o.data.filter(e => e.nombre_espacio == nombre)[0].pathmap).filter(e => e.id == parms)[0].fill;
-         datos == "" ? "" : $("#mapas" + JSON.parse(o.data.filter(e => e.nombre_espacio == nombre)[0].pathmap).filter(e => e.id == parms)[0].path).attr("fill", JSON.parse(o.data.filter(e => e.nombre_espacio == nombre)[0].pathmap).filter(e => e.id == parms)[0].fill)
+        //  console.log(va)
+        // va.svg.style.fill = JSON.parse(o.data.filter(e => e.nombre_espacio == nombre)[0].pathmap).filter(e => e.id == parms)[0].fill;
+        datos == "" ? "" : $("#mapas" + JSON.parse(o.data.filter(e => e.nombre_espacio == nombre)[0].pathmap).filter(e => e.id == parms)[0].path).attr("fill", JSON.parse(o.data.filter(e => e.nombre_espacio == nombre)[0].pathmap).filter(e => e.id == parms)[0].fill)
         datos == "" ? "" : $("#mapas" + JSON.parse(o.data.filter(e => e.nombre_espacio == nombre)[0].pathmap).filter(e => e.id == parms)[0].path).removeAttr("class")
         //console.log(e.path)
-         datos == "" ? "" : $("#mapas" + JSON.parse(o.data.filter(e => e.nombre_espacio == nombre)[0].pathmap).filter(e => e.id == parms)[0].path).attr("fill", JSON.parse(o.data.filter(e => e.nombre_espacio == nombre)[0].pathmap).filter(e => e.id == parms)[0].fill)
-         datos == "" ? "" : $("#mapas" + JSON.parse(o.data.filter(e => e.nombre_espacio == nombre)[0].pathmap).filter(e => e.id == parms)[0].path).removeAttr("class")
+        datos == "" ? "" : $("#mapas" + JSON.parse(o.data.filter(e => e.nombre_espacio == nombre)[0].pathmap).filter(e => e.id == parms)[0].path).attr("fill", JSON.parse(o.data.filter(e => e.nombre_espacio == nombre)[0].pathmap).filter(e => e.id == parms)[0].fill)
+        datos == "" ? "" : $("#mapas" + JSON.parse(o.data.filter(e => e.nombre_espacio == nombre)[0].pathmap).filter(e => e.id == parms)[0].path).removeAttr("class")
 
     }
     function svginit() {
-        return <SVGView text={datos} fu={colro.id} color={colro.color}  />
+        return <SVGView text={datos} fu={colro.id} color={colro.color} />
     }
     return (
         <div style={{
             height: "100%"
         }}>
             <div className="d-flex flex-column justify-content-center align-items-center ">
-                {datos == "" ? "" : <div className="h-25 d-none"> <SVGView text={datos} fu={colro.id} colo={colro.color} /></div>}
+                {datos == "" ? "" : <div className="h-25 d-none">
+                    <SVGView text={datos} fu={colro.id} colo={colro.color} />
+                </div>}
+                <div className='container-fluid'>
+                    <div className='p-5 bg-secondary text-center'>
+                        <h5 className='text-white'>ECENARIO</h5>
+                    </div>
+                </div>
 
                 {mapath.typo == "fila" ?
                     <div className="section m-auto" >
@@ -157,7 +165,7 @@ export default function LocalidadMApView() {
                                                     </div>
                                                 </div>
                                             </span>
-                                            <div className=' d-flex px-1 justify-content-lg-center align-items-stretch ' style={{ width: '100%' }}>
+                                            <div className=' d-flex px-1 justify-content-lg-center  align-items-stretch ' style={{ width: '100%' }}>
                                                 {e.asientos.map((silla, index) => {
                                                     let numero = index + 1
                                                     return (
@@ -196,7 +204,7 @@ export default function LocalidadMApView() {
                                 mapath.localidadespecica.map((e, index) => {
                                     return (
                                         <div className='d-flex  PX-1 align-items-center' key={index}>
-                                            
+
                                             <div className='d-flex  pb-2' >
                                                 {e.Mesas.length > 0 ?
                                                     e.Mesas.map((e, i) => {
