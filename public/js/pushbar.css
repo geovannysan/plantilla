@@ -20,7 +20,10 @@ html.pushbar_locked {
     opacity: 0;
     background: #3c3442;
 }
-
+.bg-danger-sm{
+  
+    background-color: rgba(var(224,102,102)) !important;
+  }
 html.pushbar_locked .pushbar_overlay {
     opacity: 0.8;
     z-index: 999;

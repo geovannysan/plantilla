@@ -24,7 +24,10 @@ div.mesaselecion {
     background-color: #6c757d;
     cursor: pointer;
 }
-
+.bg-danger-sm{
+  
+    background-color: rgba(var(224,102,102)) !important;
+  }
 div.mesaocupado {
     background-color: #dc3545;
     cursor: not-allowed;

@@ -39,6 +39,7 @@ export default function LocalidadMApView() {
     })
     const viewref = useRef()
     const sillasetado = (d) => {
+        if(d.estado.toLowerCase()=='ocupado'&&(d.cedula==''||d.cedula==undefined||d.cedula==null)) return 'bg-info'
         return d.estado.toLowerCase()
     }
     function Cargarlisat() {
@@ -118,6 +119,34 @@ export default function LocalidadMApView() {
             console.log(err)
         })
     }
+    function Copiar(d){
+        
+        if(d.estado.toLowerCase()=='ocupado'){
+        copiarTexto(d.cedula);
+        console.log(d.cedula)
+        if(d.cedula==null)return
+        alert("Ocupado por cedula "+d.cedula+" Copiado")}
+        else{
+          
+           if(d.cedula!=' '||d.cedula!=undefined||d.cedula!='null'){
+            
+            alert("selecionado por cedula "+d.cedula+" Copiado")}
+
+        }
+    }
+    function copiarTexto(texto) {
+        // Crea un elemento de textarea para copiar el texto
+        const tempTextarea = document.createElement('textarea');
+        tempTextarea.value = texto;
+        document.body.appendChild(tempTextarea);
+
+        // Selecciona y copia el contenido del textarea
+        tempTextarea.select();
+        document.execCommand('copy');
+
+        // Elimina el textarea temporal
+        document.body.removeChild(tempTextarea);
+    }
     useEffect(() => {
         Cargarlisat()
     }, [])
@@ -145,6 +174,21 @@ export default function LocalidadMApView() {
                 {datos == "" ? "" : <div className="h-25 d-none">
                     <SVGView text={datos} fu={colro.id} colo={colro.color} />
                 </div>}
+                <div className="d-flex  flex-column align-items-center text-center ali justify-content-center">
+                <div>Disponible</div>   
+                <div                                                            
+
+                className={'  d-flex bg-success  rounded-5 sillasfila text-center  justify-content-center align-items-center '}
+                                                            style={{ height: '30px', width: '30px', marginLeft: '1px', }}
+                                                            
+                                                        >
+                                                            <div className={'px-3 d-flex   text-white justify-content-center  '} >
+                                                                <div className="d-flex justify-content-center">
+                                                                    <span style={{ fontSize: '0.7em' }}> </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                </div>
                 <div className='container-fluid'>
                     <div className='p-5 bg-secondary text-center'>
                         <h5 className='text-white'>ECENARIO</h5>
@@ -172,7 +216,7 @@ export default function LocalidadMApView() {
                                                         <div key={"silla" + index} id={silla.idsilla}
                                                             className={silla.silla + '  d-flex  ' + sillasetado(silla) + '  rounded-5 sillasfila text-center  justify-content-center align-items-center '}
                                                             style={{ height: '30px', width: '30px', marginLeft: '1px', }}
-                                                            onClick={() => Agregarsilla(silla)}
+                                                            onClick={() => Copiar(silla)}
                                                         >
                                                             <div className={'px-3 d-flex   text-white justify-content-center  '} >
                                                                 <div className="d-flex justify-content-center">
