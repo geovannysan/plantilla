@@ -2,6 +2,7 @@
   "name": "t-ickets",
   "version": "2.0.1",
   "private": true,
+  "homepage": "",
   "dependencies": {
     "@date-io/date-fns": "^2.16.0",
     "@fortawesome/fontawesome-free": "5.15.2",
