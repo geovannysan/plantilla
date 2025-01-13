@@ -30,7 +30,6 @@ root.render(
       <Switch>
 
         <Route path="/:id/:parms" render={() => <LocalidadmapViews/>} />
-
         <Route path="*" to="/" />
       </Switch>
     </BrowserRouter>

@@ -77,12 +77,13 @@ function MesasView({ text, status, list }) {
     let sillabloquea = ["D42", "D41", "D40", "D39", "D37", "D36", "E48", "E49", "E50"]
     //console.log(e.substring(0, 1))
     let envotid = sessionStorage.getItem("eventoid")
+    if (Object.values(asiento).every(isDisnone)) { return "none" }
     //if (Object.values(asiento).every(isDispon)) { return "mesadisponible" }
     if (Object.values(asiento).every(isOcupado)) { return "mesaocupado" }
     if (Object.values(asiento).every(isReserva)) { return "mesareserva" }
     if (Object.values(asiento).every(isSeleccion)) { return "mesaselecion" }
     if (Object.values(asiento).every(isApartado)) { return "mesaapartada" }
-    if (Object.values(asiento).every(isDisnone)) { return "none" }
+    
     // if (!mesas.includes(e.substring(0, 1))) { return "bg-secondary" }
    // if ((envotid == "X5U5VR") && !mesas.includes(e.substring(0, 1)) || ((e.substring(0, 1) == 'D' || e.substring(0, 1) == 'E') && !sillabloquea.includes(e))) { return "bg-dark" }
     return "mesadisponible"
