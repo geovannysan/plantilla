@@ -1,28 +1,5 @@
- /* 
-      https://superal.github.io/canvas2image/canvas2image.js
-https://html2canvas.hertzen.com/dist/html2canvas.min.js
-https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js
-      $(function() { 
-        $("#crearimagen").click(function() { 
-            html2canvas($("#elcontenido"), {
-                onrendered: function(canvas) {
-                    theCanvas = canvas;
-                    document.body.appendChild(canvas);
-
-                    /*
-                    canvas.toBlob(function(blob) {
-                      saveAs(blob, "Dashboard.png"); 
-                    });
-                    
-                }
-            });
-        });
-    });*/
-     $(document).ready(function(){
-
-$("#crear-imagen").click(function() {
-          html2canvas($('#content-img')[0]).then(function(canvas) {
-          return Canvas2Image.saveAsPNG(canvas);
-          $(".response").append(canvas);
-   });
-  });
+SELECT 'Enero' as MES, 'GUAYAS' AS Provicia, 'GUAYAQUIL' AS CANTON,u.nombre AS 'NOMBRE DE USUARIO', u.direccion_principal,u.movil AS 'TELEFONO', '0' AS 'Numero', 'SPEED' AS 'EMPRESA','INALAMBRICO' AS 'TIPO', CAST(SUBSTRING_INDEX(p.velocidad, '/', 1) AS UNSIGNED) AS Up, CAST(SUBSTRING_INDEX(p.velocidad, '/', 1) AS UNSIGNED) AS Down, p.plan, ROUND((p.costo)* 1.15,2) as 'valor con iva' 
+FROM usuarios u 
+INNER JOIN tblservicios t ON t.idcliente = u.id 
+INNER JOIN perfiles p ON t.idperfil = p.id 
+WHERE u.estado = 'ACTIVO'

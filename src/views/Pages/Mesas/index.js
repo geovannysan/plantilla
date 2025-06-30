@@ -666,6 +666,24 @@ function MesasView({ text, status, list }) {
               MesaEstado={MesaEstado}
               alert={alert}
               enviarsillas={() => enviarsillas(text)} />;
+          case 11:
+            return <MesadiesView text={text} list={list}
+              obtenerid={obtenerid}
+              succesSilla={succesSilla}
+              succesLimit={succesLimit}
+              Estado={Estado}
+              MesaEstado={MesaEstado}
+              alert={alert}
+              enviarsillas={() => enviarsillas(text)} />;
+          case 12:
+            return <MesadiesView text={text} list={list}
+              obtenerid={obtenerid}
+              succesSilla={succesSilla}
+              succesLimit={succesLimit}
+              Estado={Estado}
+              MesaEstado={MesaEstado}
+              alert={alert}
+              enviarsillas={() => enviarsillas(text)} />;
           default:
             return <MesacerView text={text} list={list}
               obtenerid={obtenerid}
